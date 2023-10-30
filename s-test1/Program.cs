@@ -1,8 +1,21 @@
+using Newtonsoft.Json.Serialization;
+using PEMS.Contracts;
+using PEMS.Providers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+object p = builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+});
+RepoDb.SqlServerBootstrap.Initialize();
+
+builder.Services.AddScoped<IDataAccessProvider, DataAccessProvider>();
+builder.Services.AddScoped<IPEMSProvider, PEMSProvider>();
 
 var app = builder.Build();
 

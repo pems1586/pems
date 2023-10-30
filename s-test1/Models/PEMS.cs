@@ -1,7 +1,8 @@
-namespace s_test1.Controllers
+namespace PEMS.Models
 {
-    public class PEMS
+    public class PEMSystem
     {
+        public int ID { get; set; }
         public string FLE_ID { get; set; }
         public string TST_PGM_CDE { get; set; }
         public string TST_ADM__TST_DTE { get; set; }
