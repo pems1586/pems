@@ -1,0 +1,5 @@
+.home .filters { background-color: gray; color: white; padding: 29px; border-radius: 5px; }
+
+.home .table .action { background-color: gray; color: white; padding: 7px; border-radius: 5px; }
+
+.home .table .action:hover { background-color: #8e8e8e; }

@@ -1,0 +1,21 @@
+<div class="login col-12">
+  <div class="login-section col-4">
+    <h3 class="col-12 text-center">LOGIN</h3>
+    <div class="col-12">
+      <div class="mb-3">
+        <label for="username" class="col-sm-2 col-form-label">User Name</label>
+        <input type="text" class="form-control" id="username" autocomplete="off" [(ngModel)]="usename" />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="col-sm-2 col-form-label">Password</label>
+        <input type="password" class="form-control" id="password" autocomplete="off" [(ngModel)]="password" />
+      </div>
+      <p class="cls-red" *ngIf="!!error">
+        {{error}}
+      </p>
+      <div class="mb-3">
+        <button class="btn btn-primary col-12" (click)="onSubmit()">LOGIN</button>
+      </div>
+    </div>
+  </div>
+</div>

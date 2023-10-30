@@ -1,0 +1,104 @@
+<div class="home">
+  <div class="filters">
+    <div class="col-12 d-flex">
+      <div class="form-group col-2 p-2">
+        <label for="program">Program</label>
+        <select class="form-select" aria-label="Program">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="form-group col-2 p-2">
+        <label for="source">Source</label>
+        <select class="form-select" aria-label="Source">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="form-group col-2 p-2">
+        <label for="target">Target</label>
+        <select class="form-select" aria-label="Target">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="form-group col-4 p-2">
+        <label for="filename">File Name</label>
+        <select class="form-select" aria-label="File Name">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="form-group col-2 p-2">
+        <label for="datatypename">Data Type Name</label>
+        <select class="form-select" aria-label="Data type Name">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-12 d-flex">
+      <div class="form-group col-2 p-2">
+        <label for="fileprocessstartdate">File Process Start Date</label>
+        <input type="date" class="form-control" id="fileprocessstartdate" />
+      </div>
+      <div class="form-group col-2 p-2">
+        <label for="fileprocessenddate">File Process End Date</label>
+        <input type="date" class="form-control" id="fileprocessstartdate" />
+      </div>
+      <div class="form-group col-3 p-2">
+        <button class="btn btn-primary mt-4" (click)="onSearch()">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+  <table class="table my-4" *ngIf="!!pemsRecords && !!pemsRecords.length">
+    <thead>
+      <tr>
+        <th><input class="form-check-input" type="checkbox"></th>
+        <th scope="col">Edit Item</th>
+        <th scope="col">Delete</th>
+        <th scope="col">File ID</th>
+        <th scope="col">Program</th>
+        <th scope="col">Test Date</th>
+        <th scope="col">Source</th>
+        <th scope="col">Target</th>
+        <th scope="col">File Name</th>
+        <th scope="col">Data Type</th>
+        <th scope="col">File Seq</th>
+        <th scope="col">File Type</th>
+        <th scope="col">File Process Date</th>
+        <th scope="col">Record Count</th>
+        <th scope="col">Creation Date</th>
+        <th scope="col">Last Updated Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of pemsRecords">
+        <td><input class="form-check-input" type="checkbox" [checked]="record.isSelected" (click)="record.isSelected = !record.isSelected"></td>
+        <td (click)="onEdit(record)"><span class="cursor-pointer action">Edit Item</span></td>
+        <td (click)="onDelete(record)"><span class="cursor-pointer action">Delete</span></td>
+        <td>{{record.FLE_ID}}</td>
+        <td>{{record.TST_PGM_CDE}}</td>
+        <td>{{record.TST_ADM__TST_DTE}}</td>
+        <td>{{record.SRC_SYS_ID}}</td>
+        <td>{{record.TRGT_SYS_ID}}</td>
+        <td>{{record.FLE_NAM}}</td>
+        <td>{{record.FILE_TYPE_CODE}}</td>
+        <td>{{record.FLE_SEQ_NO}}</td>
+        <td>{{record.FILE_TYPE_CODE}}</td>
+        <td>{{record.FLE_PRCSD_DTE}}</td>
+        <td>{{record.TOT_RCD_CNT}}</td>
+        <td>{{record.FLE_CRETN_DTM}}</td>
+        <td>{{record.LST_UPDT_DTM}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="my-4" *ngIf="!pemsRecords || (!!pemsRecords && !pemsRecords.length)">
+    No records available.
+  </p>
+</div>
