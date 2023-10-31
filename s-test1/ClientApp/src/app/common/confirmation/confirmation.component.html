@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLongTitle">Delete Confirmation</h5>
+  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  Are you sure, want to delete the record.
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+  <button type="button" class="btn btn-danger" (click)="onConfirm()">Confirm</button>
+</div>

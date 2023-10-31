@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { PemsEditComponent } from './home/pems-edit/pems-edit.component';
+import { ConfirmationComponent } from './common/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PemsEditComponent } from './home/pems-edit/pems-edit.component';
     NavMenuComponent,
     HomeComponent,
     LoginComponent,
-    PemsEditComponent
+    PemsEditComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -29,10 +31,11 @@ import { PemsEditComponent } from './home/pems-edit/pems-edit.component';
       { path: 'login', component: LoginComponent },
     ]),
     CommonModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
-  exports: [PemsEditComponent],
+  exports: [PemsEditComponent, ConfirmationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

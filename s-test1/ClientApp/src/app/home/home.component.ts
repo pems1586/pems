@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
 import { BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
+import { ConfirmationComponent } from '../common/confirmation/confirmation.component';
+import { ApiService } from '../services/api.service';
 import { PemsEditComponent } from './pems-edit/pems-edit.component';
 
 @Component({
@@ -12,6 +14,8 @@ export class HomeComponent {
   pemsRecords: Array<PEMS> = [];
   filteredRecords: Array<PEMS> = [];
   selectedFilters: ISelectedFilters = { TST_PGM_CDE: [], SRC_SYS_ID: [], TRGT_SYS_ID: [], FLE_NAM: [], DTA_TYP_NAM: [] };
+  selectedDelete: PEMS | undefined;
+  selectedAll: boolean = false;
 
   fileidOptions: Array<string> = [];
   sourceOptions: Array<string> = [];
@@ -21,21 +25,27 @@ export class HomeComponent {
 
   search: string = '';
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private modalService: BsModalService) {
-    http.get<PEMS[]>(baseUrl + 'api/pems').subscribe(result => {
-      result.forEach(item => {
+  constructor(public http: HttpClient,
+    @Inject('BASE_URL') private baseUrl: string,
+    private modalService: BsModalService,
+    private apiService: ApiService) {
+    this.getResources();
+  }
+
+  getResources() {
+    this.apiService.get(`${this.baseUrl}api/pems`).subscribe((result: any) => {
+      result.forEach((item: PEMS) => {
         item.isSelected = false;
       })
       this.pemsRecords = result;
-      this.filteredRecords = result; 
+      this.filteredRecords = result;
 
       this.fileidOptions = this.pemsRecords.filter(_ => !!_.FLE_ID).map(item => item.FLE_ID as string);
       this.sourceOptions = this.pemsRecords.filter(_ => !!_.SRC_SYS_ID).map(item => item.SRC_SYS_ID as string);
       this.targetOptions = this.pemsRecords.filter(_ => !!_.TRGT_SYS_ID).map(item => item.TRGT_SYS_ID as string);
       this.filenameOptions = this.pemsRecords.filter(_ => !!_.FLE_NAM).map(item => item.FLE_NAM as string);
       this.datatypeOptions = this.pemsRecords.filter(_ => !!_.FILE_TYPE_CODE).map(item => item.FILE_TYPE_CODE as string);
-
-    }, error => console.error(error));
+    }, error => { });
   }
 
   onFilterChange(data: any, type: string) {
@@ -67,7 +77,38 @@ export class HomeComponent {
   }
 
   onDeleteSelected() {
+    if (!!this.filteredRecords && !!this.filteredRecords.filter(_ => !!_.isSelected).length) {
+      this.filteredRecords.filter(_ => !!_.isSelected).forEach(item => {
+        this.selectedDelete = item;
+        this.deleteItem();
+      })
+    }
+  }
 
+  selectAllToggle() {
+    this.filteredRecords.forEach(item => {
+      item.isSelected = this.selectedAll;
+    })
+  }
+
+  isDisableDelete() {
+    return !this.filteredRecords.filter(_ => !!_.isSelected).length;
+  }
+
+  onDelete(item: PEMS) {
+    const initialState = {
+      model: {
+        item: item.ID,
+        action: this.deleteItem.bind(this)
+      }
+    };
+    let config: ModalOptions = {
+      class: 'modal-md modal-dialog-centered',
+      ignoreBackdropClick: true,
+      initialState
+    }
+    this.modalService.show(ConfirmationComponent, config);
+    this.selectedDelete = item;
   }
 
   onSearch() {
@@ -87,7 +128,8 @@ export class HomeComponent {
   onEdit(record: PEMS) {
     const initialState = {
       model: {
-        item: record
+        item: record,
+        action: this.onSave.bind(this)
       }
     };
     let config: ModalOptions = {
@@ -98,12 +140,23 @@ export class HomeComponent {
     this.modalService.show(PemsEditComponent, config);
   }
 
-  onDelete(record: PEMS) {
+  onSave() {
+    this.getResources();
+  }
 
+  deleteItem() {
+    if (!!this.selectedDelete && this.selectedDelete.ID) {
+      this.apiService.delete(`${this.baseUrl}api/pems?id=${this.selectedDelete.ID}`).subscribe(res => {
+        if (!!res) {
+          this.getResources();
+        }
+      });
+    }
   }
 }
 
 export interface PEMS {
+  ID: number;
   FLE_ID: string;
   TST_PGM_CDE: string;
   TST_ADM__TST_DTE: string;
