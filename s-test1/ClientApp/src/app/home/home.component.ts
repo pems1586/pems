@@ -23,8 +23,6 @@ export class HomeComponent {
   filenameOptions: Array<string> = [];
   datatypeOptions: Array<string> = [];
 
-  search: string = '';
-
   constructor(public http: HttpClient,
     @Inject('BASE_URL') private baseUrl: string,
     private modalService: BsModalService,
@@ -40,12 +38,12 @@ export class HomeComponent {
       this.pemsRecords = result;
       this.filteredRecords = result;
 
-      this.fileidOptions = this.pemsRecords.filter(_ => !!_.FLE_ID).map(item => item.FLE_ID as string);
-      this.sourceOptions = this.pemsRecords.filter(_ => !!_.SRC_SYS_ID).map(item => item.SRC_SYS_ID as string);
-      this.targetOptions = this.pemsRecords.filter(_ => !!_.TRGT_SYS_ID).map(item => item.TRGT_SYS_ID as string);
-      this.filenameOptions = this.pemsRecords.filter(_ => !!_.FLE_NAM).map(item => item.FLE_NAM as string);
-      this.datatypeOptions = this.pemsRecords.filter(_ => !!_.FILE_TYPE_CODE).map(item => item.FILE_TYPE_CODE as string);
-    }, error => { });
+      this.fileidOptions = this.pemsRecords.filter(_ => !!_.FLE_ID).map(item => item.FLE_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
+      this.sourceOptions = this.pemsRecords.filter(_ => !!_.SRC_SYS_ID).map(item => item.SRC_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
+      this.targetOptions = this.pemsRecords.filter(_ => !!_.TRGT_SYS_ID).map(item => item.TRGT_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
+      this.filenameOptions = this.pemsRecords.filter(_ => !!_.FLE_NAM).map(item => item.FLE_NAM as string).filter((item, index, arr) => arr.indexOf(item) === index);
+      this.datatypeOptions = this.pemsRecords.filter(_ => !!_.FILE_TYPE_CODE).map(item => item.FILE_TYPE_CODE as string).filter((item, index, arr) => arr.indexOf(item) === index);
+    }, (error: any) => { });
   }
 
   onFilterChange(data: any, type: string) {
@@ -112,7 +110,7 @@ export class HomeComponent {
   }
 
   onSearch() {
-    if (this.search && !!this.pemsRecords && !!this.pemsRecords.length) {
+    if (!!this.pemsRecords && !!this.pemsRecords.length) {
       this.filteredRecords = [...this.pemsRecords].filter(item =>
         (!!this.selectedFilters.TST_PGM_CDE && this.selectedFilters.TST_PGM_CDE.length ? this.selectedFilters.TST_PGM_CDE.includes(item.TST_PGM_CDE) : true)
         && (!!this.selectedFilters.SRC_SYS_ID && this.selectedFilters.SRC_SYS_ID.length ? this.selectedFilters.SRC_SYS_ID.includes(item.SRC_SYS_ID) : true)
@@ -146,7 +144,7 @@ export class HomeComponent {
 
   deleteItem() {
     if (!!this.selectedDelete && this.selectedDelete.ID) {
-      this.apiService.delete(`${this.baseUrl}api/pems?id=${this.selectedDelete.ID}`).subscribe(res => {
+      this.apiService.delete(`${this.baseUrl}api/pems?id=${this.selectedDelete.ID}`).subscribe((res: any) => {
         if (!!res) {
           this.getResources();
         }
