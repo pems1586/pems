@@ -29,7 +29,7 @@ import { PemsEditComponent } from './home/pems-edit/pems-edit.component';
       { path: 'login', component: LoginComponent },
     ]),
     CommonModule,
-    ModalModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   exports: [PemsEditComponent],

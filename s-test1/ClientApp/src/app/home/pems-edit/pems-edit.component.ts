@@ -6,7 +6,7 @@ import { PEMS } from '../home.component';
 @Component({
   selector: 'app-pems-edit',
   templateUrl: './pems-edit.component.html',
-  styleUrls: ['./pems-edit.component.css']
+  styleUrls: ['./pems-edit.component.scss']
 })
 export class PemsEditComponent {
 

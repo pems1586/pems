@@ -1,0 +1,31 @@
+.home {
+  .filters {
+    background-color: gray;
+    color: white;
+    padding: 29px;
+    border-radius: 5px;
+  }
+}
+
+.home {
+  .tbl-home {
+    overflow: auto;
+
+    .table {
+      .action {
+        background-color: gray;
+        color: white;
+        padding: 7px;
+        border-radius: 5px;
+      }
+
+      .action:hover {
+        background-color: #8e8e8e;
+      }
+
+      .data {
+        min-width: 9rem;
+      }
+    }
+  }
+}

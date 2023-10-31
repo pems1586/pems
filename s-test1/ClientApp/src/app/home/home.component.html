@@ -3,42 +3,32 @@
     <div class="col-12 d-flex">
       <div class="form-group col-2 p-2">
         <label for="program">Program</label>
-        <select class="form-select" aria-label="Program">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select class="form-select" aria-label="Program" multiple [(ngModel)]="selectedFilters.TST_PGM_CDE" (ngModelChange)="onFilterChange($event, 'program')">
+          <option [value]="opt" *ngFor="let opt of fileidOptions">{{opt}}</option>
         </select>
       </div>
       <div class="form-group col-2 p-2">
         <label for="source">Source</label>
-        <select class="form-select" aria-label="Source">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select class="form-select" aria-label="Source" multiple [(ngModel)]="selectedFilters.SRC_SYS_ID" (ngModelChange)="onFilterChange($event, 'source')">
+          <option [value]="opt" *ngFor="let opt of sourceOptions">{{opt}}</option>
         </select>
       </div>
       <div class="form-group col-2 p-2">
         <label for="target">Target</label>
-        <select class="form-select" aria-label="Target">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select class="form-select" aria-label="Target" multiple [(ngModel)]="selectedFilters.TRGT_SYS_ID" (ngModelChange)="onFilterChange($event, 'target')">
+          <option [value]="opt" *ngFor="let opt of targetOptions">{{opt}}</option>
         </select>
       </div>
       <div class="form-group col-4 p-2">
         <label for="filename">File Name</label>
-        <select class="form-select" aria-label="File Name">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select class="form-select" aria-label="File Name" multiple [(ngModel)]="selectedFilters.FLE_NAM" (ngModelChange)="onFilterChange($event, 'filename')">
+          <option [value]="opt" *ngFor="let opt of filenameOptions">{{opt}}</option>
         </select>
       </div>
       <div class="form-group col-2 p-2">
         <label for="datatypename">Data Type Name</label>
-        <select class="form-select" aria-label="Data type Name">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+        <select class="form-select" aria-label="Data type Name" multiple [(ngModel)]="selectedFilters.DTA_TYP_NAM" (ngModelChange)="onFilterChange($event, 'datatypename')">
+          <option [value]="opt" *ngFor="let opt of datatypeOptions">{{opt}}</option>
         </select>
       </div>
     </div>
@@ -56,48 +46,55 @@
       </div>
     </div>
   </div>
-  <table class="table my-4" *ngIf="!!pemsRecords && !!pemsRecords.length">
-    <thead>
-      <tr>
-        <th><input class="form-check-input" type="checkbox"></th>
-        <th scope="col">Edit Item</th>
-        <th scope="col">Delete</th>
-        <th scope="col">File ID</th>
-        <th scope="col">Program</th>
-        <th scope="col">Test Date</th>
-        <th scope="col">Source</th>
-        <th scope="col">Target</th>
-        <th scope="col">File Name</th>
-        <th scope="col">Data Type</th>
-        <th scope="col">File Seq</th>
-        <th scope="col">File Type</th>
-        <th scope="col">File Process Date</th>
-        <th scope="col">Record Count</th>
-        <th scope="col">Creation Date</th>
-        <th scope="col">Last Updated Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let record of pemsRecords">
-        <td><input class="form-check-input" type="checkbox" [checked]="record.isSelected" (click)="record.isSelected = !record.isSelected"></td>
-        <td (click)="onEdit(record)"><span class="cursor-pointer action">Edit Item</span></td>
-        <td (click)="onDelete(record)"><span class="cursor-pointer action">Delete</span></td>
-        <td>{{record.FLE_ID}}</td>
-        <td>{{record.TST_PGM_CDE}}</td>
-        <td>{{record.TST_ADM__TST_DTE}}</td>
-        <td>{{record.SRC_SYS_ID}}</td>
-        <td>{{record.TRGT_SYS_ID}}</td>
-        <td>{{record.FLE_NAM}}</td>
-        <td>{{record.FILE_TYPE_CODE}}</td>
-        <td>{{record.FLE_SEQ_NO}}</td>
-        <td>{{record.FILE_TYPE_CODE}}</td>
-        <td>{{record.FLE_PRCSD_DTE}}</td>
-        <td>{{record.TOT_RCD_CNT}}</td>
-        <td>{{record.FLE_CRETN_DTM}}</td>
-        <td>{{record.LST_UPDT_DTM}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tbl-home">
+    <div class="col-12 text-end mt-4">
+      <button class="btn btn-danger" (click)="onDeleteSelected()">Delete Selected</button>
+    </div>
+    <table class="table border my-2" *ngIf="!!pemsRecords && !!pemsRecords.length">
+      <thead>
+        <tr>
+          <th><input class="form-check-input" type="checkbox"></th>
+          <th scope="col">Edit Item</th>
+          <th scope="col">Delete</th>
+          <th scope="col">File ID</th>
+          <th scope="col">Program</th>
+          <th scope="col">Test Date</th>
+          <th scope="col">Source</th>
+          <th scope="col">Target</th>
+          <th scope="col">File Name</th>
+          <th scope="col">Data Type</th>
+          <th scope="col">File Seq</th>
+          <th scope="col">File Type</th>
+          <th scope="col">File Process Date</th>
+          <th scope="col">Record Count</th>
+          <th scope="col">Creation Date</th>
+          <th scope="col">Last Updated Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of pemsRecords">
+          <td>
+            <input class="form-check-input" type="checkbox" [(ngModel)]="record.isSelected" />
+          </td>
+          <td class="data" (click)="onEdit(record)"><span class="cursor-pointer action">Edit Item</span></td>
+          <td class="data" (click)="onDelete(record)"><span class="cursor-pointer action">Delete</span></td>
+          <td class="data">{{record.FLE_ID}}</td>
+          <td class="data">{{record.TST_PGM_CDE}}</td>
+          <td class="data">{{record.TST_ADM__TST_DTE}}</td>
+          <td class="data">{{record.SRC_SYS_ID}}</td>
+          <td class="data">{{record.TRGT_SYS_ID}}</td>
+          <td class="data">{{record.FLE_NAM}}</td>
+          <td class="data">{{record.DTA_TYP_NAM}}</td>
+          <td class="data">{{record.FLE_SEQ_NO}}</td>
+          <td class="data">{{record.FILE_TYPE_CODE}}</td>
+          <td class="data">{{record.FLE_PRCSD_DTE}}</td>
+          <td class="data">{{record.TOT_RCD_CNT}}</td>
+          <td class="data">{{record.FLE_CRETN_DTM}}</td>
+          <td class="data">{{record.LST_UPDT_DTM}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <p class="my-4" *ngIf="!pemsRecords || (!!pemsRecords && !pemsRecords.length)">
     No records available.
   </p>
