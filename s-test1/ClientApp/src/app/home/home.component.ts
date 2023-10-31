@@ -69,9 +69,22 @@ export class HomeComponent {
           this.selectedFilters.DTA_TYP_NAM = data;
           break;
       }
-
-      this.onSearch();
     }
+  }
+
+  createNew() {
+    const initialState = {
+      model: {
+        item: { ID: 0 },
+        action: this.onSave.bind(this)
+      }
+    };
+    let config: ModalOptions = {
+      class: 'modal-lg modal-dialog-centered',
+      ignoreBackdropClick: true,
+      initialState
+    }
+    this.modalService.show(PemsEditComponent, config);
   }
 
   onDeleteSelected() {
@@ -91,6 +104,20 @@ export class HomeComponent {
 
   isDisableDelete() {
     return !this.filteredRecords.filter(_ => !!_.isSelected).length;
+  }
+
+  onDeleteBulk() {
+    const initialState = {
+      model: {
+        action: this.onDeleteSelected.bind(this)
+      }
+    };
+    let config: ModalOptions = {
+      class: 'modal-md modal-dialog-centered',
+      ignoreBackdropClick: true,
+      initialState
+    }
+    this.modalService.show(ConfirmationComponent, config);
   }
 
   onDelete(item: PEMS) {

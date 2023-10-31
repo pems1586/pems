@@ -19,7 +19,7 @@ export class PemsEditComponent {
 
   constructor(@Inject('BASE_URL') private baseUrl: string, private modalService: BsModalService, private apiService: ApiService) {
     this.pemsForm = new FormGroup({
-      ID: new FormControl('', [Validators.required]),
+      ID: new FormControl(0, []),
       FLE_ID: new FormControl('', [Validators.required]),
       TST_PGM_CDE: new FormControl('', [Validators.required]),
       TST_ADM__TST_DTE: new FormControl('', [Validators.required]),

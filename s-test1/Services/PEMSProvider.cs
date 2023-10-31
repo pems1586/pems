@@ -30,7 +30,10 @@ namespace PEMS.Providers
             try
             {
                 var parameters = new ExpandoObject() as IDictionary<string, object>;
-                parameters.Add("ID", item.ID);
+                if (item.ID > 0)
+                {
+                    parameters.Add("ID", item.ID);
+                }
                 parameters.Add("FLE_ID", item.FLE_ID);
                 parameters.Add("TST_PGM_CDE", item.TST_PGM_CDE);
                 parameters.Add("TST_ADM__TST_DTE", item.TST_ADM__TST_DTE);
