@@ -30,11 +30,10 @@ namespace PEMS.Providers
             try
             {
                 var parameters = new ExpandoObject() as IDictionary<string, object>;
-                if (item.ID > 0)
+                if (item.FLE_ID > 0)
                 {
-                    parameters.Add("ID", item.ID);
+                    parameters.Add("FLE_ID", item.FLE_ID);
                 }
-                parameters.Add("FLE_ID", item.FLE_ID);
                 parameters.Add("TST_PGM_CDE", item.TST_PGM_CDE);
                 parameters.Add("TST_ADM__TST_DTE", item.TST_ADM__TST_DTE);
                 parameters.Add("SRC_SYS_ID", item.SRC_SYS_ID);
@@ -51,7 +50,7 @@ namespace PEMS.Providers
                 parameters.Add("CBT_CR_RCD_CNT", item.CBT_CR_RCD_CNT);
                 parameters.Add("FLE_CRETN_DTM", item.FLE_CRETN_DTM);
                 parameters.Add("LST_UPDT_DTM", item.LST_UPDT_DTM);
-                if (item.ID > 0)
+                if (item.FLE_ID > 0)
                 {
                     return this.DataAccessProvider.UpdateItem(Constants.QueryString.UpdatePEMS, parameters);
                 }
@@ -71,7 +70,7 @@ namespace PEMS.Providers
             try
             {
                 var parameters = new ExpandoObject() as IDictionary<string, object>;
-                parameters.Add("ID", ID);
+                parameters.Add("FLE_ID", ID);
                 return this.DataAccessProvider.UpdateItem(Constants.QueryString.DeletePEMS, parameters) > 0;
             }
             catch (Exception ex)

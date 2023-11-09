@@ -85,17 +85,17 @@
           </td>
           <td class="data">{{record.FLE_ID}}</td>
           <td class="data">{{record.TST_PGM_CDE}}</td>
-          <td class="data">{{record.TST_ADM__TST_DTE}}</td>
+          <td class="data">{{record.TST_ADM__TST_DTE | date: 'dd-MM-yyyy hh:mm'}}</td>
           <td class="data">{{record.SRC_SYS_ID}}</td>
           <td class="data">{{record.TRGT_SYS_ID}}</td>
           <td class="data">{{record.FLE_NAM}}</td>
           <td class="data">{{record.DTA_TYP_NAM}}</td>
           <td class="data">{{record.FLE_SEQ_NO}}</td>
           <td class="data">{{record.FILE_TYPE_CODE}}</td>
-          <td class="data">{{record.FLE_PRCSD_DTE}}</td>
+          <td class="data">{{record.FLE_PRCSD_DTE | date: 'dd-MM-yyyy hh:mm'}}</td>
           <td class="data">{{record.TOT_RCD_CNT}}</td>
-          <td class="data">{{record.FLE_CRETN_DTM}}</td>
-          <td class="data">{{record.LST_UPDT_DTM}}</td>
+          <td class="data">{{record.FLE_CRETN_DTM | date: 'dd-MM-yyyy hh:mm'}}</td>
+          <td class="data">{{record.LST_UPDT_DTM | date: 'dd-MM-yyyy hh:mm'}}</td>
         </tr>
       </tbody>
     </table>

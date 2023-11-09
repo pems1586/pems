@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerConfig, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -12,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
 import { PemsEditComponent } from './home/pems-edit/pems-edit.component';
 import { ConfirmationComponent } from './common/confirmation/confirmation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,11 @@ import { ConfirmationComponent } from './common/confirmation/confirmation.compon
     ]),
     CommonModule,
     ModalModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [BsDatepickerConfig],
   exports: [PemsEditComponent, ConfirmationComponent],
   bootstrap: [AppComponent]
 })

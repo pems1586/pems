@@ -6,94 +6,88 @@
   <form [formGroup]="pemsForm">
     <div class="row">
       <div class="mb-3 col-6">
-        <label for="fileid" class="form-label">File ID</label>
-        <input type="email" class="form-control" id="fileid" formControlName="FLE_ID">
-      </div>
-      <div class="mb-3 col-6">
         <label for="program" class="form-label">Program</label>
-        <input type="email" class="form-control" id="program" formControlName="TST_PGM_CDE">
+        <input type="text" class="form-control" id="program" formControlName="TST_PGM_CDE">
       </div>
-    </div>
-    <div class="row">
       <div class="mb-3 col-6">
         <label for="testdate" class="form-label">Test Date</label>
-        <input type="email" class="form-control" id="testdate" formControlName="TST_ADM__TST_DTE">
+        <input type="text" id="testdate" formControlName="TST_ADM__TST_DTE" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
       </div>
+    </div>
+    <div class="row">
       <div class="mb-3 col-6">
         <label for="source" class="form-label">Source</label>
-        <input type="email" class="form-control" id="source" formControlName="SRC_SYS_ID">
+        <input type="text" class="form-control" id="source" formControlName="SRC_SYS_ID">
       </div>
-    </div>
-    <div class="row">
       <div class="mb-3 col-6">
         <label for="target" class="form-label">Target</label>
-        <input type="email" class="form-control" id="target" formControlName="TRGT_SYS_ID">
+        <input type="text" class="form-control" id="target" formControlName="TRGT_SYS_ID">
       </div>
+    </div>
+    <div class="row">
       <div class="mb-3 col-6">
         <label for="filename" class="form-label">File Name</label>
-        <input type="email" class="form-control" id="filename" formControlName="FLE_NAM">
+        <input type="text" class="form-control" id="filename" formControlName="FLE_NAM">
       </div>
-    </div>
-    <div class="row">
       <div class="mb-3 col-6">
         <label for="datatype" class="form-label">Data Type</label>
-        <input type="email" class="form-control" id="datatype" formControlName="DTA_TYP_NAM">
+        <input type="text" class="form-control" id="datatype" formControlName="DTA_TYP_NAM">
       </div>
+    </div>
+    <div class="row">
       <div class="mb-3 col-6">
         <label for="fileseq" class="form-label">File Seq</label>
-        <input type="email" class="form-control" id="fileseq" formControlName="FLE_SEQ_NO">
+        <input type="text" class="form-control" id="fileseq" formControlName="FLE_SEQ_NO">
       </div>
-    </div>
-    <div class="row">
       <div class="mb-3 col-6">
         <label for="filetype" class="form-label">File Type</label>
-        <input type="email" class="form-control" id="filetype" formControlName="FILE_TYPE_CODE">
+        <input type="text" class="form-control" id="filetype" formControlName="FILE_TYPE_CODE">
       </div>
+    </div>
+    <div class="row">
       <div class="mb-3 col-6">
         <label for="fileprocessdate" class="form-label">File Process Date</label>
-        <input type="email" class="form-control" id="fileprocessdate" formControlName="FLE_PRCSD_DTE">
+        <input type="text" id="fileprocessdate" formControlName="FLE_PRCSD_DTE" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
       </div>
-    </div>
-    <div class="row">
       <div class="mb-3 col-6">
         <label for="recordcount" class="form-label">Record Count</label>
-        <input type="email" class="form-control" id="recordcount" formControlName="TOT_RCD_CNT">
-      </div>
-      <div class="mb-3 col-6">
-        <label for="PPR_BSD_TSTG_MC_RCD_CNT" class="form-label">PPR_BSD_TSTG_MC_RCD_CNT</label>
-        <input type="email" class="form-control" id="PPR_BSD_TSTG_MC_RCD_CNT" formControlName="PPR_BSD_TSTG_MC_RCD_CNT">
+        <input type="number" class="form-control" id="recordcount" formControlName="TOT_RCD_CNT">
       </div>
     </div>
     <div class="row">
+      <div class="mb-3 col-6">
+        <label for="PPR_BSD_TSTG_MC_RCD_CNT" class="form-label">PPR_BSD_TSTG_MC_RCD_CNT</label>
+        <input type="number" class="form-control" id="PPR_BSD_TSTG_MC_RCD_CNT" formControlName="PPR_BSD_TSTG_MC_RCD_CNT">
+      </div>
       <div class="mb-3 col-6">
         <label for="lastupdateddate" class="form-label">
           PPR_BSD_TSTG_CR_RCD_CNT
         </label>
-        <input type="email" class="form-control" id="PPR_BSD_TSTG_CR_RCD_CNT" formControlName="PPR_BSD_TSTG_CR_RCD_CNT">
-      </div>
-      <div class="mb-3 col-6">
-        <label for="CBT_MC_RCD_CNT" class="form-label">CBT_MC_RCD_CNT</label>
-        <input type="email" class="form-control" id="CBT_MC_RCD_CNT" formControlName="CBT_MC_RCD_CNT">
+        <input type="number" class="form-control" id="PPR_BSD_TSTG_CR_RCD_CNT" formControlName="PPR_BSD_TSTG_CR_RCD_CNT">
       </div>
     </div>
     <div class="row">
+      <div class="mb-3 col-6">
+        <label for="CBT_MC_RCD_CNT" class="form-label">CBT_MC_RCD_CNT</label>
+        <input type="number" class="form-control" id="CBT_MC_RCD_CNT" formControlName="CBT_MC_RCD_CNT">
+      </div>
       <div class="mb-3 col-6">
         <label for="CBT_CR_RCD_CNT" class="form-label">
           CBT_CR_RCD_CNT
         </label>
-        <input type="email" class="form-control" id="CBT_CR_RCD_CNT" formControlName="CBT_CR_RCD_CNT">
-      </div>
-      <div class="mb-3 col-6">
-        <label for="creationdate" class="form-label">Creation Date</label>
-        <input type="email" class="form-control" id="creationdate" formControlName="FLE_CRETN_DTM">
+        <input type="number" class="form-control" id="CBT_CR_RCD_CNT" formControlName="CBT_CR_RCD_CNT">
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
+        <label for="creationdate" class="form-label">Creation Date</label>
+        <input type="text" id="creationdate" formControlName="FLE_CRETN_DTM" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
+      </div>
+      <div class="mb-3 col-6">
         <label for="lastupdateddate" class="form-label">
           Last Updated Date
         </label>
-        <input type="email" class="form-control" id="lastupdateddate" formControlName="LST_UPDT_DTM">
+        <input type="text" id="lastupdateddate" formControlName="LST_UPDT_DTM" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
       </div>
     </div>
   </form>

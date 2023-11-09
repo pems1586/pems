@@ -17,7 +17,7 @@ export class HomeComponent {
   selectedDelete: PEMS | undefined;
   selectedAll: boolean = false;
 
-  fileidOptions: Array<string> = [];
+  fileidOptions: Array<number> = [];
   sourceOptions: Array<string> = [];
   targetOptions: Array<string> = [];
   filenameOptions: Array<string> = [];
@@ -38,7 +38,7 @@ export class HomeComponent {
       this.pemsRecords = result;
       this.filteredRecords = result;
 
-      this.fileidOptions = this.pemsRecords.filter(_ => !!_.FLE_ID).map(item => item.FLE_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
+      this.fileidOptions = this.pemsRecords.filter(_ => !!_.FLE_ID).map(item => item.FLE_ID).filter((item, index, arr) => arr.indexOf(item) === index);
       this.sourceOptions = this.pemsRecords.filter(_ => !!_.SRC_SYS_ID).map(item => item.SRC_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
       this.targetOptions = this.pemsRecords.filter(_ => !!_.TRGT_SYS_ID).map(item => item.TRGT_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
       this.filenameOptions = this.pemsRecords.filter(_ => !!_.FLE_NAM).map(item => item.FLE_NAM as string).filter((item, index, arr) => arr.indexOf(item) === index);
@@ -123,7 +123,7 @@ export class HomeComponent {
   onDelete(item: PEMS) {
     const initialState = {
       model: {
-        item: item.ID,
+        item: item.FLE_ID,
         action: this.deleteItem.bind(this)
       }
     };
@@ -170,8 +170,8 @@ export class HomeComponent {
   }
 
   deleteItem() {
-    if (!!this.selectedDelete && this.selectedDelete.ID) {
-      this.apiService.delete(`${this.baseUrl}api/pems?id=${this.selectedDelete.ID}`).subscribe((res: any) => {
+    if (!!this.selectedDelete && this.selectedDelete.FLE_ID) {
+      this.apiService.delete(`${this.baseUrl}api/pems?id=${this.selectedDelete.FLE_ID}`).subscribe((res: any) => {
         if (!!res) {
           this.getResources();
         }
@@ -181,24 +181,23 @@ export class HomeComponent {
 }
 
 export interface PEMS {
-  ID: number;
-  FLE_ID: string;
+  FLE_ID: number;
   TST_PGM_CDE: string;
-  TST_ADM__TST_DTE: string;
+  TST_ADM__TST_DTE: Date;
   SRC_SYS_ID: string;
   TRGT_SYS_ID: string;
   FLE_NAM: string;
   DTA_TYP_NAM: string;
   FLE_SEQ_NO: string;
   FILE_TYPE_CODE: string;
-  FLE_PRCSD_DTE: string;
-  TOT_RCD_CNT: string;
-  PPR_BSD_TSTG_MC_RCD_CN: string;
-  PPR_BSD_TSTG_CR_RCD_CNT: string;
-  CBT_MC_RCD_CNT: string;
-  CBT_CR_RCD_CNT: string;
-  FLE_CRETN_DTM: string;
-  LST_UPDT_DTM: string;
+  FLE_PRCSD_DTE: Date;
+  TOT_RCD_CNT: number;
+  PPR_BSD_TSTG_MC_RCD_CN: number;
+  PPR_BSD_TSTG_CR_RCD_CNT: number;
+  CBT_MC_RCD_CNT: number;
+  CBT_CR_RCD_CNT: number;
+  FLE_CRETN_DTM: Date;
+  LST_UPDT_DTM: Date;
   isSelected: boolean;
 }
 
