@@ -7,7 +7,7 @@ namespace PEMS.Contracts
     {
         List<PEMSystem> GetAll();
 
-        int Save(PEMSystem item);
+        bool Save(PEMSystem item);
 
         bool Delete(int ID);
     }

@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using PEMS.Contracts;
 using Oracle.ManagedDataAccess.Client;
 using PEMS.Models;
+using Serilog;
 
 namespace PEMS.Providers
 {
@@ -11,12 +12,9 @@ namespace PEMS.Providers
     {
         private string _connectionString;
 
-        private readonly ILogger<DataAccessProvider> _Logger;
-
-        public OracleDataAccessProvider(IConfiguration configuration, ILogger<DataAccessProvider> logger)
+        public OracleDataAccessProvider(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString(Constants.ConnectionStringKey);
-            this._Logger = logger;
         }
 
         public List<PEMSystem> GetItems(string query)
@@ -57,10 +55,11 @@ namespace PEMS.Providers
                         }
                     }
                 }
+                Log.Information("Get all records successfully.", "OracleDataAccessProvider - UpdateItem");
             }
             catch (Exception ex)
             {
-                _Logger.LogError(1, ex, ex.Message);
+                Log.Error(ex.ToString(), "OracleDataAccessProvider - GetItems");
             }
 
             return response;
@@ -79,6 +78,8 @@ namespace PEMS.Providers
                     cmd.ExecuteNonQuery();
                 }
             }
+
+            Log.Information("Create record successfully.", "OracleDataAccessProvider - UpdateItem");
         }
 
         public T GetItem<T>(string query, object obj, bool isStoredProcedure = false)
@@ -91,10 +92,12 @@ namespace PEMS.Providers
                     var items = connection.ExecuteQuery<T>(query, obj, commandType: isStoredProcedure ? CommandType.StoredProcedure : CommandType.Text);
                     item = items != null ? items.FirstOrDefault() : default(T);
                 }
+
+                Log.Information("GetItem record successfull.", "OracleDataAccessProvider - UpdateItem");
             }
             catch (Exception ex)
             {
-                _Logger.LogError(1, ex, ex.Message);
+                Log.Error(ex.ToString(), "OracleDataAccessProvider - GetItem");
             }
 
             return item;
@@ -118,10 +121,12 @@ namespace PEMS.Providers
                     }
                 }
 
+                Log.Information("Updated record successfull.", "OracleDataAccessProvider - UpdateItem");
                 return true;
             }
             catch (Exception ex)
             {
+                Log.Error(ex.ToString(), "OracleDataAccessProvider - UpdateItem");
                 return false;
             }
         }

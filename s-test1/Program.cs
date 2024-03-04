@@ -1,8 +1,13 @@
 using Newtonsoft.Json.Serialization;
 using PEMS.Contracts;
 using PEMS.Providers;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseSerilog((hostContext, services, configuration) => {
+    configuration.WriteTo.Console();
+    configuration.WriteTo.File("pemslogs/logs.txt", rollingInterval: RollingInterval.Day);
+});
 
 // Add services to the container.
 

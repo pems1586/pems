@@ -9,6 +9,7 @@ namespace PEMS.Controllers
     public class PEMSController : ControllerBase
     {
         private readonly ILogger<PEMSController> _logger;
+
         private IPEMSProvider PEMSProvider;
 
         public PEMSController(ILogger<PEMSController> logger, IPEMSProvider pemsService)

@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using PEMS.Contracts;
 using PEMS.Models;
+using Serilog;
 using System.Dynamic;
 
 namespace PEMS.Providers
@@ -9,13 +10,12 @@ namespace PEMS.Providers
     {
         private readonly ILogger<PEMSProvider> _Logger;
 
-        public PEMSProvider(IOracleDataAccessProvider dataAccessProvider /*IUserContext userContext*/, ILogger<PEMSProvider> logger) : base(dataAccessProvider /*userContext*/)
+        public PEMSProvider(IOracleDataAccessProvider dataAccessProvider, ILogger<PEMSProvider> logger) : base(dataAccessProvider)
         {
             this._Logger = logger;
         }
 
         public List<PEMSystem> GetAll()
-        
         {
             try
             {
@@ -23,6 +23,7 @@ namespace PEMS.Providers
             }
             catch (Exception ex)
             {
+                Log.Error(ex.ToString(), "PEMSProvider - GetAll");
                 throw ex;
             }
         }
@@ -66,6 +67,7 @@ namespace PEMS.Providers
             }
             catch (Exception ex)
             {
+                Log.Error(ex.ToString(), "PEMSProvider - Save");
                 return false;
             }
         }
@@ -81,6 +83,7 @@ namespace PEMS.Providers
             }
             catch (Exception ex)
             {
+                Log.Error(ex.ToString(), "PEMSProvider - Delete");
                 throw ex;
             }
         }
