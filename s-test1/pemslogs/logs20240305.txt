@@ -1,0 +1,247 @@
+2024-03-05 19:42:45.220 +05:30 [INF] User profile is available. Using 'C:\Users\bhagavan.m\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-05 19:42:45.734 +05:30 [INF] Now listening on: https://localhost:7067
+2024-03-05 19:42:45.736 +05:30 [INF] Now listening on: http://localhost:5184
+2024-03-05 19:42:45.741 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-05 19:42:45.742 +05:30 [INF] Hosting environment: Development
+2024-03-05 19:42:45.743 +05:30 [INF] Content root path: D:\temp\s-test1\s-test1\
+2024-03-05 19:42:49.074 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:42:54.124 +05:30 [INF] No SPA development server running at https://localhost:44467 found.
+2024-03-05 19:42:54.587 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:42:54.608 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 5539.8458ms
+2024-03-05 19:42:54.640 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/favicon.ico - -
+2024-03-05 19:42:54.702 +05:30 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'D:\temp\s-test1\s-test1\wwwroot\favicon.ico'
+2024-03-05 19:42:54.704 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/favicon.ico - - - 200 5430 image/x-icon 64.0694ms
+2024-03-05 19:42:57.638 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:43:02.695 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:43:02.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 5060.2690ms
+2024-03-05 19:43:05.729 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:43:11.223 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:43:11.274 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 5545.9325ms
+2024-03-05 19:43:14.298 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:43:19.356 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:43:19.359 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 5061.1607ms
+2024-03-05 19:43:22.388 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:43:27.422 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:43:27.425 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 5038.3661ms
+2024-03-05 19:43:30.448 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:43:35.761 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:43:35.851 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 5402.3627ms
+2024-03-05 19:43:38.896 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:43:43.727 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:43:43.730 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 4833.6820ms
+2024-03-05 19:43:46.767 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:43:57.713 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:43:57.716 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 10949.2454ms
+2024-03-05 19:44:00.744 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:07.839 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:07.843 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 7098.3666ms
+2024-03-05 19:44:10.882 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:10.908 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:10.910 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 28.3116ms
+2024-03-05 19:44:13.940 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:13.961 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:13.964 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 24.2501ms
+2024-03-05 19:44:17.010 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:17.071 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:17.078 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 67.6005ms
+2024-03-05 19:44:20.129 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:20.160 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:20.164 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 34.3118ms
+2024-03-05 19:44:23.183 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:23.193 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:23.195 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 11.8425ms
+2024-03-05 19:44:26.238 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:26.272 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:26.276 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 38.0110ms
+2024-03-05 19:44:29.310 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:29.330 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:29.332 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 22.9494ms
+2024-03-05 19:44:32.372 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:32.391 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:32.393 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 22.2363ms
+2024-03-05 19:44:35.419 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:35.438 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:35.441 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 22.7565ms
+2024-03-05 19:44:38.476 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:38.514 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:38.521 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 45.0763ms
+2024-03-05 19:44:41.573 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:41.601 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:41.604 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 31.6469ms
+2024-03-05 19:44:44.639 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:44.657 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:44.660 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 21.6858ms
+2024-03-05 19:44:47.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:47.704 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:47.706 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 13.2726ms
+2024-03-05 19:44:50.759 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:50.776 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:50.779 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 20.5655ms
+2024-03-05 19:44:53.812 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:53.844 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:53.847 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 35.9067ms
+2024-03-05 19:44:56.533 +05:30 [ERR] Unable to connect to the SPA development server at 'https://localhost:44467'.
+2024-03-05 19:44:56.888 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:44:56.928 +05:30 [INF] No SPA development server running at https://localhost:44467 found.
+2024-03-05 19:44:57.386 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:44:57.395 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 507.7257ms
+2024-03-05 19:45:00.431 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:00.454 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:00.457 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 26.9414ms
+2024-03-05 19:45:03.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:03.502 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:03.504 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 14.5366ms
+2024-03-05 19:45:06.522 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:06.542 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:06.546 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 23.4277ms
+2024-03-05 19:45:09.571 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:09.589 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:09.592 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 20.9654ms
+2024-03-05 19:45:12.640 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:12.665 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:12.668 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 28.5932ms
+2024-03-05 19:45:15.701 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:15.736 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:15.739 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 38.2590ms
+2024-03-05 19:45:18.798 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:18.817 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:18.820 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 21.8719ms
+2024-03-05 19:45:21.849 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:21.873 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:21.876 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 26.6539ms
+2024-03-05 19:45:24.901 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:24.922 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:24.925 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 24.4112ms
+2024-03-05 19:45:27.953 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:27.974 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:27.977 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 24.8131ms
+2024-03-05 19:45:31.018 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:31.032 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:31.034 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 16.8178ms
+2024-03-05 19:45:34.070 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:34.087 +05:30 [INF] SPA proxy is not ready. Returning temporary landing page.
+2024-03-05 19:45:34.089 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 200 - text/html 18.9660ms
+2024-03-05 19:45:37.126 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7067/ - -
+2024-03-05 19:45:37.640 +05:30 [INF] SPA development server running at 'https://localhost:44467'
+2024-03-05 19:45:37.641 +05:30 [INF] SPA proxy is ready. Redirecting to https://localhost:44467.
+2024-03-05 19:45:37.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7067/ - - - 302 0 - 559.1074ms
+2024-03-05 19:45:48.745 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - -
+2024-03-05 19:45:48.750 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems - -
+2024-03-05 19:45:48.810 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:45:48.810 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:45:48.927 +05:30 [INF] Route matched with {action = "CanDBConnect", controller = "PEMS"}. Executing controller action with signature Boolean CanDBConnect() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:45:48.927 +05:30 [INF] Route matched with {action = "Get", controller = "PEMS"}. Executing controller action with signature System.Collections.Generic.List`1[PEMS.Models.PEMSystem] Get() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:46:02.225 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.GetItems(String query) in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 49
+2024-03-05 19:46:02.225 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.CanDBConnected() in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 25
+2024-03-05 19:46:02.250 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2024-03-05 19:46:02.250 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PEMS.Models.PEMSystem, s-test1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-05 19:46:02.502 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.CanDBConnect (s-test1) in 13556.2225ms
+2024-03-05 19:46:02.517 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:46:02.527 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - - - 200 5 application/json;+charset=utf-8 13781.4151ms
+2024-03-05 19:46:02.560 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.Get (s-test1) in 13621.7987ms
+2024-03-05 19:46:02.564 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:46:02.573 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems - - - 200 2 application/json;+charset=utf-8 13822.4129ms
+2024-03-05 19:48:35.642 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - -
+2024-03-05 19:48:35.647 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:48:35.649 +05:30 [INF] Route matched with {action = "CanDBConnect", controller = "PEMS"}. Executing controller action with signature Boolean CanDBConnect() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:48:41.269 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems - -
+2024-03-05 19:48:41.322 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:48:41.377 +05:30 [INF] Route matched with {action = "Get", controller = "PEMS"}. Executing controller action with signature System.Collections.Generic.List`1[PEMS.Models.PEMSystem] Get() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:48:41.663 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.CanDBConnected() in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 25
+2024-03-05 19:48:41.705 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2024-03-05 19:48:41.748 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.CanDBConnect (s-test1) in 6095.9872ms
+2024-03-05 19:48:41.813 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:48:41.862 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - - - 200 5 application/json;+charset=utf-8 6195.5166ms
+2024-03-05 19:48:41.924 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.GetItems(String query) in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 49
+2024-03-05 19:48:41.926 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PEMS.Models.PEMSystem, s-test1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-05 19:48:41.930 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.Get (s-test1) in 436.9603ms
+2024-03-05 19:48:41.934 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:48:41.937 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems - - - 200 2 application/json;+charset=utf-8 668.5659ms
+2024-03-05 19:48:44.138 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - -
+2024-03-05 19:48:44.140 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:48:44.142 +05:30 [INF] Route matched with {action = "CanDBConnect", controller = "PEMS"}. Executing controller action with signature Boolean CanDBConnect() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:48:44.342 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems - -
+2024-03-05 19:48:44.411 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:48:44.555 +05:30 [INF] Route matched with {action = "Get", controller = "PEMS"}. Executing controller action with signature System.Collections.Generic.List`1[PEMS.Models.PEMSystem] Get() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:48:44.641 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.CanDBConnected() in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 25
+2024-03-05 19:48:44.685 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2024-03-05 19:48:44.746 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.CanDBConnect (s-test1) in 601.6512ms
+2024-03-05 19:48:44.820 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:48:44.864 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - - - 200 5 application/json;+charset=utf-8 725.9017ms
+2024-03-05 19:48:45.003 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.GetItems(String query) in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 49
+2024-03-05 19:48:45.005 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PEMS.Models.PEMSystem, s-test1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-05 19:48:45.007 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.Get (s-test1) in 364.5338ms
+2024-03-05 19:48:45.010 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:48:45.012 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems - - - 200 2 application/json;+charset=utf-8 669.2143ms
+2024-03-05 19:48:48.167 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - -
+2024-03-05 19:48:48.168 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:48:48.170 +05:30 [INF] Route matched with {action = "CanDBConnect", controller = "PEMS"}. Executing controller action with signature Boolean CanDBConnect() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:48:48.329 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:44467/api/pems - -
+2024-03-05 19:48:48.331 +05:30 [INF] Executing endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:48:48.332 +05:30 [INF] Route matched with {action = "Get", controller = "PEMS"}. Executing controller action with signature System.Collections.Generic.List`1[PEMS.Models.PEMSystem] Get() on controller PEMS.Controllers.PEMSController (s-test1).
+2024-03-05 19:48:48.816 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.CanDBConnected() in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 25
+2024-03-05 19:48:48.897 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2024-03-05 19:48:48.986 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.CanDBConnect (s-test1) in 813.681ms
+2024-03-05 19:48:48.986 +05:30 [ERR] System.ArgumentException: 'Initial Catalog' is an invalid connection string attribute
+   at OracleInternal.ConnectionPool.ConnectionString.SetProperty(String key, String value, String quotedValue, String originalKey, SecureString secPasswd, SecureString token)
+   at OracleInternal.ConnectionPool.ConnectionString.Parse(OracleConnection con, String constr)
+   at OracleInternal.ConnectionPool.ConnectionString..ctor(OracleConnection con, String constring, OracleCredential credential, OracleAccessToken accessToken, Boolean bIncludeOsUser)
+   at OracleInternal.ConnectionPool.ConnectionString.GetCS(OracleConnection con, String constr, OracleCredential credential, OracleAccessToken accessToken, Boolean bCreateIfNotinCache, Boolean bIncludeOsUser)
+   at Oracle.ManagedDataAccess.Client.OracleConnection.set_ConnectionString(String value)
+   at Oracle.ManagedDataAccess.Client.OracleConnection..ctor(String connectionString)
+   at PEMS.Providers.OracleDataAccessProvider.GetItems(String query) in D:\temp\s-test1\s-test1\Services\OracleDataAccessProvider.cs:line 49
+2024-03-05 19:48:48.989 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.CanDBConnect (s-test1)'
+2024-03-05 19:48:48.991 +05:30 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[PEMS.Models.PEMSystem, s-test1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-05 19:48:48.994 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems/candbconnect - - - 200 5 application/json;+charset=utf-8 826.8744ms
+2024-03-05 19:48:48.997 +05:30 [INF] Executed action PEMS.Controllers.PEMSController.Get (s-test1) in 663.6636ms
+2024-03-05 19:48:49.000 +05:30 [INF] Executed endpoint 'PEMS.Controllers.PEMSController.Get (s-test1)'
+2024-03-05 19:48:49.003 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:44467/api/pems - - - 200 2 application/json;+charset=utf-8 673.4938ms

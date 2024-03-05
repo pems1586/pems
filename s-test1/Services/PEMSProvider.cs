@@ -15,6 +15,19 @@ namespace PEMS.Providers
             this._Logger = logger;
         }
 
+        public bool CanDBConnected()
+        {
+            try
+            {
+                return this.DataAccessProvider.CanDBConnected();
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), "PEMSProvider - GetAll");
+                throw ex;
+            }
+        }
+
         public List<PEMSystem> GetAll()
         {
             try

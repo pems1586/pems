@@ -6,6 +6,8 @@ namespace PEMS.Contracts
 {
     public interface IOracleDataAccessProvider
     {
+        bool CanDBConnected();
+
         List<PEMSystem> GetItems(string query);
 
         void AddItem(string query, OracleParameter[] parameters);

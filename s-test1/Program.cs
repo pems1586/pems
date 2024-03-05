@@ -20,6 +20,7 @@ object p = builder.Services.AddControllers().AddNewtonsoftJson(options =>
 RepoDb.SqlServerBootstrap.Initialize();
 
 builder.Services.AddScoped<IDataAccessProvider, DataAccessProvider>();
+builder.Services.AddScoped<IOracleDataAccessProvider, OracleDataAccessProvider>();
 builder.Services.AddScoped<IPEMSProvider, PEMSProvider>();
 
 var app = builder.Build();

@@ -18,6 +18,13 @@ namespace PEMS.Controllers
             this.PEMSProvider = pemsService;
         }
 
+        [Route("candbconnect")]
+        [HttpGet]
+        public bool CanDBConnect()
+        {
+            return this.PEMSProvider.CanDBConnected();
+        }
+
         [HttpGet]
         public List<PEMSystem> Get()
         {
@@ -25,7 +32,7 @@ namespace PEMS.Controllers
         }
 
         [HttpPost]
-        public int Save(PEMSystem item)
+        public bool Save(PEMSystem item)
         {
             return this.PEMSProvider.Save(item);
         }

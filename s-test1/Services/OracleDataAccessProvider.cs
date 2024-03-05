@@ -17,6 +17,30 @@ namespace PEMS.Providers
             _connectionString = configuration.GetConnectionString(Constants.ConnectionStringKey);
         }
 
+        public bool CanDBConnected()
+        {
+            var response = true;
+            try
+            {
+                using (OracleConnection con = new OracleConnection(_connectionString))
+                {
+                    using (OracleCommand cmd = con.CreateCommand())
+                    {
+                        con.Open();
+                    }
+                }
+
+                Log.Information("Database connected successfully.", "OracleDataAccessProvider - CanDBConnected");
+            }
+            catch (Exception ex)
+            {
+                response = false;
+                Log.Error(ex.ToString(), "OracleDataAccessProvider - CanDBConnected");
+            }
+
+            return response;
+        }
+
         public List<PEMSystem> GetItems(string query)
         {
             var response = new List<PEMSystem>();

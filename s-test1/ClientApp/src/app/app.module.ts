@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { PemsEditComponent } from './home/pems-edit/pems-edit.component';
 import { ConfirmationComponent } from './common/confirmation/confirmation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoDBComponent } from './common/nodb/nodb.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     LoginComponent,
     PemsEditComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    NoDBComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
   ],
   providers: [BsDatepickerConfig],
-  exports: [PemsEditComponent, ConfirmationComponent],
+  exports: [PemsEditComponent, ConfirmationComponent, NoDBComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

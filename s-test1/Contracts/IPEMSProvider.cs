@@ -5,6 +5,8 @@ namespace PEMS.Contracts
 {
     public interface IPEMSProvider
     {
+        bool CanDBConnected();
+
         List<PEMSystem> GetAll();
 
         bool Save(PEMSystem item);
