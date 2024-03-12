@@ -1,4 +1,5 @@
 using Newtonsoft.Json.Serialization;
+using Oracle.ManagedDataAccess.Client;
 using PEMS.Contracts;
 using PEMS.Providers;
 using Serilog;
@@ -19,9 +20,12 @@ object p = builder.Services.AddControllers().AddNewtonsoftJson(options =>
 });
 RepoDb.SqlServerBootstrap.Initialize();
 
-builder.Services.AddScoped<IDataAccessProvider, DataAccessProvider>();
-builder.Services.AddScoped<IOracleDataAccessProvider, OracleDataAccessProvider>();
-builder.Services.AddScoped<IPEMSProvider, PEMSProvider>();
+OracleConfiguration.TnsAdmin = "D:\\temp\\ConsoleApp4\\ConsoleApp4\\Wallet_ZEQ0RP65WJJJ8LAJ";
+OracleConfiguration.WalletLocation = OracleConfiguration.TnsAdmin;
+
+builder.Services.AddSingleton<IDataAccessProvider, DataAccessProvider>();
+builder.Services.AddSingleton<IOracleDataAccessProvider, OracleDataAccessProvider>();
+builder.Services.AddSingleton<IPEMSProvider, PEMSProvider>();
 
 var app = builder.Build();
 

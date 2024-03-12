@@ -27,6 +27,7 @@ namespace PEMS.Providers
                     using (OracleCommand cmd = con.CreateCommand())
                     {
                         con.Open();
+                        con.Close();
                     }
                 }
 
@@ -77,7 +78,9 @@ namespace PEMS.Providers
                             };
                             response.Add(pems);
                         }
+
                     }
+                    con.Close();
                 }
                 Log.Information("Get all records successfully.", "OracleDataAccessProvider - UpdateItem");
             }
@@ -89,15 +92,31 @@ namespace PEMS.Providers
             return response;
         }
 
-        public void AddItem(string query, OracleParameter[] parameters)
+        public void AddItem(string query, PEMSystem item)
         {
             using (OracleConnection con = new OracleConnection(_connectionString))
             {
-                using (OracleCommand cmd = new OracleCommand())
+                using (OracleCommand cmd = con.CreateCommand())
                 {
-                    cmd.Parameters.AddRange(parameters);
+                    cmd.Parameters.Add(new OracleParameter("TST_PGM_CDE", item.TST_PGM_CDE));
+                    cmd.Parameters.Add(new OracleParameter("TST_ADM__TST_DTE", item.TST_ADM__TST_DTE));
+                    cmd.Parameters.Add(new OracleParameter("SRC_SYS_ID", item.SRC_SYS_ID));
+                    cmd.Parameters.Add(new OracleParameter("TRGT_SYS_ID", item.TRGT_SYS_ID));
+                    cmd.Parameters.Add(new OracleParameter("FLE_NAM", item.FLE_NAM));
+                    cmd.Parameters.Add(new OracleParameter("DTA_TYP_NAM", item.DTA_TYP_NAM));
+                    cmd.Parameters.Add(new OracleParameter("FLE_SEQ_NO", item.FLE_SEQ_NO));
+                    cmd.Parameters.Add(new OracleParameter("FILE_TYPE_CODE", item.FILE_TYPE_CODE));
+                    cmd.Parameters.Add(new OracleParameter("FLE_PRCSD_DTE", item.FLE_PRCSD_DTE));
+                    cmd.Parameters.Add(new OracleParameter("TOT_RCD_CNT", item.TOT_RCD_CNT));
+                    cmd.Parameters.Add(new OracleParameter("PPR_BSD_TSTG_MC_RCD_CNT", item.PPR_BSD_TSTG_MC_RCD_CNT));
+                    cmd.Parameters.Add(new OracleParameter("PPR_BSD_TSTG_CR_RCD_CNT", item.PPR_BSD_TSTG_CR_RCD_CNT));
+                    cmd.Parameters.Add(new OracleParameter("CBT_MC_RCD_CNT", item.CBT_MC_RCD_CNT));
+                    cmd.Parameters.Add(new OracleParameter("CBT_CR_RCD_CNT", item.CBT_CR_RCD_CNT));
+                    cmd.Parameters.Add(new OracleParameter("FLE_CRETN_DTM", item.FLE_CRETN_DTM));
+                    cmd.Parameters.Add(new OracleParameter("LST_UPDT_DTM", item.LST_UPDT_DTM));
 
                     con.Open();
+                    cmd.BindByName = true;
                     cmd.CommandText = query;
                     cmd.ExecuteNonQuery();
                 }
@@ -129,17 +148,61 @@ namespace PEMS.Providers
 
 
 
-        public bool UpdateItem(string query, OracleParameter[] parameters)
+        public bool UpdateItem(string query, PEMSystem item)
         {
             try
             {
                 using (OracleConnection con = new OracleConnection(_connectionString))
                 {
-                    using (OracleCommand cmd = new OracleCommand())
+                    using (OracleCommand cmd = con.CreateCommand())
                     {
-                        cmd.Parameters.AddRange(parameters);
+                        cmd.Parameters.Add(new OracleParameter("FLE_ID", item.FLE_ID));
+                        cmd.Parameters.Add(new OracleParameter("TST_PGM_CDE", item.TST_PGM_CDE));
+                        cmd.Parameters.Add(new OracleParameter("TST_ADM__TST_DTE", item.TST_ADM__TST_DTE));
+                        cmd.Parameters.Add(new OracleParameter("SRC_SYS_ID", item.SRC_SYS_ID));
+                        cmd.Parameters.Add(new OracleParameter("TRGT_SYS_ID", item.TRGT_SYS_ID));
+                        cmd.Parameters.Add(new OracleParameter("FLE_NAM", item.FLE_NAM));
+                        cmd.Parameters.Add(new OracleParameter("DTA_TYP_NAM", item.DTA_TYP_NAM));
+                        cmd.Parameters.Add(new OracleParameter("FLE_SEQ_NO", item.FLE_SEQ_NO));
+                        cmd.Parameters.Add(new OracleParameter("FILE_TYPE_CODE", item.FILE_TYPE_CODE));
+                        cmd.Parameters.Add(new OracleParameter("FLE_PRCSD_DTE", item.FLE_PRCSD_DTE));
+                        cmd.Parameters.Add(new OracleParameter("TOT_RCD_CNT", item.TOT_RCD_CNT));
+                        cmd.Parameters.Add(new OracleParameter("PPR_BSD_TSTG_MC_RCD_CNT", item.PPR_BSD_TSTG_MC_RCD_CNT));
+                        cmd.Parameters.Add(new OracleParameter("PPR_BSD_TSTG_CR_RCD_CNT", item.PPR_BSD_TSTG_CR_RCD_CNT));
+                        cmd.Parameters.Add(new OracleParameter("CBT_MC_RCD_CNT", item.CBT_MC_RCD_CNT));
+                        cmd.Parameters.Add(new OracleParameter("CBT_CR_RCD_CNT", item.CBT_CR_RCD_CNT));
+                        cmd.Parameters.Add(new OracleParameter("FLE_CRETN_DTM", item.FLE_CRETN_DTM));
+                        cmd.Parameters.Add(new OracleParameter("LST_UPDT_DTM", item.LST_UPDT_DTM));
 
                         con.Open();
+                        cmd.BindByName = true;
+                        cmd.CommandText = query;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                Log.Information("Updated record successfull.", "OracleDataAccessProvider - UpdateItem");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), "OracleDataAccessProvider - UpdateItem");
+                return false;
+            }
+        }
+
+        public bool DeleteItem(string query, int id)
+        {
+            try
+            {
+                using (OracleConnection con = new OracleConnection(_connectionString))
+                {
+                    using (OracleCommand cmd = con.CreateCommand())
+                    {
+                        cmd.Parameters.Add(new OracleParameter("FLE_ID", id));
+
+                        con.Open();
+                        cmd.BindByName = true;
                         cmd.CommandText = query;
                         cmd.ExecuteNonQuery();
                     }
