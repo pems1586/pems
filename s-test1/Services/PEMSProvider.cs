@@ -51,6 +51,8 @@ namespace PEMS.Providers
                 }
                 else
                 {
+                    var maxid = this.DataAccessProvider.GetMaxId(Constants.QueryString.AddPEMS);
+                    item.FLE_ID = maxid + 1;
                     this.DataAccessProvider.AddItem(Constants.QueryString.AddPEMS, item);
                 }
 

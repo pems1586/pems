@@ -22,18 +22,18 @@ export class PemsEditComponent {
       FLE_ID: new FormControl(0, []),
       TST_PGM_CDE: new FormControl('', [Validators.required, Validators.maxLength(5)]),
       TST_ADM__TST_DTE: new FormControl('', [Validators.required]),
-      SRC_SYS_ID: new FormControl('', [Validators.required]),
-      TRGT_SYS_ID: new FormControl('', [Validators.required]),
-      FLE_NAM: new FormControl('', [Validators.required]),
-      DTA_TYP_NAM: new FormControl('', [Validators.required]),
-      FLE_SEQ_NO: new FormControl('', [Validators.required]),
-      FILE_TYPE_CODE: new FormControl('', [Validators.required]),
+      SRC_SYS_ID: new FormControl('', [Validators.required, Validators.maxLength(5)]),
+      TRGT_SYS_ID: new FormControl('', [Validators.required, Validators.maxLength(5)]),
+      FLE_NAM: new FormControl('', [Validators.required, Validators.maxLength(50)]),
+      DTA_TYP_NAM: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      FLE_SEQ_NO: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+      FILE_TYPE_CODE: new FormControl('', [Validators.required, Validators.maxLength(1)]),
       FLE_PRCSD_DTE: new FormControl('', [Validators.required]),
-      TOT_RCD_CNT: new FormControl('', [Validators.required, Validators.max(999999999)]),
-      PPR_BSD_TSTG_MC_RCD_CNT: new FormControl('', [Validators.required, Validators.max(999999999)]),
-      PPR_BSD_TSTG_CR_RCD_CNT: new FormControl('', [Validators.required, Validators.max(999999999)]),
-      CBT_MC_RCD_CNT: new FormControl('', [Validators.required, Validators.max(999999999)]),
-      CBT_CR_RCD_CNT: new FormControl('', [Validators.required, Validators.max(999999999)]),
+      TOT_RCD_CNT: new FormControl('', [Validators.required, Validators.maxLength(9)]),
+      PPR_BSD_TSTG_MC_RCD_CNT: new FormControl('', [Validators.required, Validators.maxLength(9)]),
+      PPR_BSD_TSTG_CR_RCD_CNT: new FormControl('', [Validators.required, Validators.maxLength(9)]),
+      CBT_MC_RCD_CNT: new FormControl('', [Validators.required, Validators.maxLength(9)]),
+      CBT_CR_RCD_CNT: new FormControl('', [Validators.required, Validators.maxLength(9)]),
       FLE_CRETN_DTM: new FormControl('', [Validators.required]),
       LST_UPDT_DTM: new FormControl('', [Validators.required])
     });
@@ -60,7 +60,7 @@ export class PemsEditComponent {
         }
       })
     } else {
-      alert('Please fill all the details.');
+      this.pemsForm.markAllAsTouched();
     }
   }
 }

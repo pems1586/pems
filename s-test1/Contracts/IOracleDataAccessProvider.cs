@@ -17,5 +17,7 @@ namespace PEMS.Contracts
         bool UpdateItem(string query, PEMSystem pems);
 
         bool DeleteItem(string query, int id);
+
+        int GetMaxId(string query);
     }
 }

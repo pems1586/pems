@@ -1,0 +1,9 @@
+.modal-body {
+  form {
+    max-height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100% !important;
+    padding: 10px;
+  }
+}

@@ -31,7 +31,8 @@
     "run-script-os": "^1.1.6",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",
-    "zone.js": "~0.11.6"
+    "zone.js": "~0.11.6",
+    "@ngx-lib/multiselect": "2.0.0-beta.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.3",

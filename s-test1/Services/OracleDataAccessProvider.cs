@@ -146,8 +146,6 @@ namespace PEMS.Providers
             return item;
         }
 
-
-
         public bool UpdateItem(string query, PEMSystem item)
         {
             try
@@ -216,6 +214,35 @@ namespace PEMS.Providers
                 Log.Error(ex.ToString(), "OracleDataAccessProvider - UpdateItem");
                 return false;
             }
+        }
+
+        public int GetMaxId(string query)
+        {
+            var response = 0;
+            try
+            {
+                using (OracleConnection con = new OracleConnection(_connectionString))
+                {
+                    using (OracleCommand cmd = con.CreateCommand())
+                    {
+                        con.Open();
+                        cmd.CommandText = query;
+                        OracleDataReader rdr = cmd.ExecuteReader();
+                        while (rdr.Read())
+                        {
+                            response = Convert.ToInt32(rdr["MAX_VAL"]);
+                        }
+                    }
+                    con.Close();
+                }
+                Log.Information("GetMaxId successfully.", "OracleDataAccessProvider - GetMaxId");
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), "OracleDataAccessProvider - GetMaxId");
+            }
+
+            return response;
         }
     }
 }

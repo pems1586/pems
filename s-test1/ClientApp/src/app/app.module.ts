@@ -15,6 +15,8 @@ import { PemsEditComponent } from './home/pems-edit/pems-edit.component';
 import { ConfirmationComponent } from './common/confirmation/confirmation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoDBComponent } from './common/nodb/nodb.component';
+import { NgxMultiselectModule } from '@ngx-lib/multiselect';
+import { ErrorComponent } from './common/error/error.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { NoDBComponent } from './common/nodb/nodb.component';
     LoginComponent,
     PemsEditComponent,
     ConfirmationComponent,
-    NoDBComponent
+    NoDBComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,9 +42,10 @@ import { NoDBComponent } from './common/nodb/nodb.component';
     ReactiveFormsModule,
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
+    NgxMultiselectModule
   ],
   providers: [BsDatepickerConfig],
-  exports: [PemsEditComponent, ConfirmationComponent, NoDBComponent],
+  exports: [PemsEditComponent, ConfirmationComponent, NoDBComponent, ErrorComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

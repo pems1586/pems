@@ -8,86 +8,102 @@
       <div class="mb-3 col-6">
         <label for="program" class="form-label">Program</label>
         <input type="text" class="form-control" id="program" formControlName="TST_PGM_CDE">
+        <form-error [controlName]="pemsForm.controls['TST_PGM_CDE']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="testdate" class="form-label">Test Date</label>
         <input type="text" id="testdate" formControlName="TST_ADM__TST_DTE" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
+        <form-error [controlName]="pemsForm.controls['TST_ADM__TST_DTE']"></form-error>
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
         <label for="source" class="form-label">Source</label>
         <input type="text" class="form-control" id="source" formControlName="SRC_SYS_ID">
+        <form-error [controlName]="pemsForm.controls['SRC_SYS_ID']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="target" class="form-label">Target</label>
         <input type="text" class="form-control" id="target" formControlName="TRGT_SYS_ID">
+        <form-error [controlName]="pemsForm.controls['TRGT_SYS_ID']"></form-error>
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
         <label for="filename" class="form-label">File Name</label>
         <input type="text" class="form-control" id="filename" formControlName="FLE_NAM">
+        <form-error [controlName]="pemsForm.controls['FLE_NAM']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="datatype" class="form-label">Data Type</label>
         <input type="text" class="form-control" id="datatype" formControlName="DTA_TYP_NAM">
+        <form-error [controlName]="pemsForm.controls['DTA_TYP_NAM']"></form-error>
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
         <label for="fileseq" class="form-label">File Seq</label>
         <input type="text" class="form-control" id="fileseq" formControlName="FLE_SEQ_NO">
+        <form-error [controlName]="pemsForm.controls['FLE_SEQ_NO']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="filetype" class="form-label">File Type</label>
         <input type="text" class="form-control" id="filetype" formControlName="FILE_TYPE_CODE">
+        <form-error [controlName]="pemsForm.controls['FILE_TYPE_CODE']"></form-error>
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
         <label for="fileprocessdate" class="form-label">File Process Date</label>
         <input type="text" id="fileprocessdate" formControlName="FLE_PRCSD_DTE" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
+        <form-error [controlName]="pemsForm.controls['FLE_PRCSD_DTE']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="recordcount" class="form-label">Record Count</label>
         <input type="number" class="form-control" id="recordcount" formControlName="TOT_RCD_CNT">
+        <form-error [controlName]="pemsForm.controls['TOT_RCD_CNT']"></form-error>
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
         <label for="PPR_BSD_TSTG_MC_RCD_CNT" class="form-label">PPR_BSD_TSTG_MC_RCD_CNT</label>
         <input type="number" class="form-control" id="PPR_BSD_TSTG_MC_RCD_CNT" formControlName="PPR_BSD_TSTG_MC_RCD_CNT">
+        <form-error [controlName]="pemsForm.controls['PPR_BSD_TSTG_MC_RCD_CNT']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="lastupdateddate" class="form-label">
           PPR_BSD_TSTG_CR_RCD_CNT
         </label>
         <input type="number" class="form-control" id="PPR_BSD_TSTG_CR_RCD_CNT" formControlName="PPR_BSD_TSTG_CR_RCD_CNT">
+        <form-error [controlName]="pemsForm.controls['PPR_BSD_TSTG_CR_RCD_CNT']"></form-error>
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
         <label for="CBT_MC_RCD_CNT" class="form-label">CBT_MC_RCD_CNT</label>
         <input type="number" class="form-control" id="CBT_MC_RCD_CNT" formControlName="CBT_MC_RCD_CNT">
+        <form-error [controlName]="pemsForm.controls['CBT_MC_RCD_CNT']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="CBT_CR_RCD_CNT" class="form-label">
           CBT_CR_RCD_CNT
         </label>
         <input type="number" class="form-control" id="CBT_CR_RCD_CNT" formControlName="CBT_CR_RCD_CNT">
+        <form-error [controlName]="pemsForm.controls['CBT_CR_RCD_CNT']"></form-error>
       </div>
     </div>
     <div class="row">
       <div class="mb-3 col-6">
         <label for="creationdate" class="form-label">Creation Date</label>
         <input type="text" id="creationdate" formControlName="FLE_CRETN_DTM" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
+        <form-error [controlName]="pemsForm.controls['FLE_CRETN_DTM']"></form-error>
       </div>
       <div class="mb-3 col-6">
         <label for="lastupdateddate" class="form-label">
           Last Updated Date
         </label>
         <input type="text" id="lastupdateddate" formControlName="LST_UPDT_DTM" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }" autocomplete="off" [minDate]="minDate">
+        <form-error [controlName]="pemsForm.controls['LST_UPDT_DTM']"></form-error>
       </div>
     </div>
   </form>

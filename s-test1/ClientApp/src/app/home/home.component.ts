@@ -4,6 +4,7 @@ import { BsModalService, ModalOptions } from 'ngx-bootstrap/modal';
 import { ConfirmationComponent } from '../common/confirmation/confirmation.component';
 import { ApiService } from '../services/api.service';
 import { PemsEditComponent } from './pems-edit/pems-edit.component';
+import { IDropdown } from '../common/models/models';
 
 @Component({
   selector: 'app-home',
@@ -17,17 +18,20 @@ export class HomeComponent {
   selectedDelete: PEMS | undefined;
   selectedAll: boolean = false;
 
-  fileidOptions: Array<number> = [];
-  sourceOptions: Array<string> = [];
-  targetOptions: Array<string> = [];
-  filenameOptions: Array<string> = [];
-  datatypeOptions: Array<string> = [];
+  fileidOptions: Array<IDropdown> = [];
+  sourceOptions: Array<IDropdown> = [];
+  targetOptions: Array<IDropdown> = [];
+  filenameOptions: Array<IDropdown> = [];
+  datatypeOptions: Array<IDropdown> = [];
 
   constructor(public http: HttpClient,
     @Inject('BASE_URL') private baseUrl: string,
     private modalService: BsModalService,
     private apiService: ApiService) {
     this.getResources();
+  }
+
+  ngOnInit() {
   }
 
   getResources() {
@@ -38,39 +42,39 @@ export class HomeComponent {
       this.pemsRecords = result;
       this.filteredRecords = result;
 
-      this.fileidOptions = this.pemsRecords.filter(_ => !!_.FLE_ID).map(item => item.FLE_ID).filter((item, index, arr) => arr.indexOf(item) === index);
-      this.sourceOptions = this.pemsRecords.filter(_ => !!_.SRC_SYS_ID).map(item => item.SRC_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
-      this.targetOptions = this.pemsRecords.filter(_ => !!_.TRGT_SYS_ID).map(item => item.TRGT_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index);
-      this.filenameOptions = this.pemsRecords.filter(_ => !!_.FLE_NAM).map(item => item.FLE_NAM as string).filter((item, index, arr) => arr.indexOf(item) === index);
-      this.datatypeOptions = this.pemsRecords.filter(_ => !!_.FILE_TYPE_CODE).map(item => item.FILE_TYPE_CODE as string).filter((item, index, arr) => arr.indexOf(item) === index);
+      this.fileidOptions = this.pemsRecords.filter(_ => !!_.FLE_ID).map(item => item.FLE_ID).filter((item, index, arr) => arr.indexOf(item) === index).map(_ => ({ id: _, name: _ } as IDropdown));
+      this.sourceOptions = this.pemsRecords.filter(_ => !!_.SRC_SYS_ID).map(item => item.SRC_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index).map(_ => ({ id: _, name: _ } as IDropdown));
+      this.targetOptions = this.pemsRecords.filter(_ => !!_.TRGT_SYS_ID).map(item => item.TRGT_SYS_ID as string).filter((item, index, arr) => arr.indexOf(item) === index).map(_ => ({ id: _, name: _ } as IDropdown));
+      this.filenameOptions = this.pemsRecords.filter(_ => !!_.FLE_NAM).map(item => item.FLE_NAM as string).filter((item, index, arr) => arr.indexOf(item) === index).map(_ => ({ id: _, name: _ } as IDropdown));
+      this.datatypeOptions = this.pemsRecords.filter(_ => !!_.FILE_TYPE_CODE).map(item => item.FILE_TYPE_CODE as string).filter((item, index, arr) => arr.indexOf(item) === index).map(_ => ({ id: _, name: _ } as IDropdown));
     }, (error: any) => { });
   }
 
-  onFilterChange(data: any, type: string) {
-    if (!!type) {
-      switch (type) {
-        case 'program':
-          this.selectedFilters.TST_PGM_CDE = data;
-          break;
+  //onFilterChange(data: any, type: string) {
+  //  if (!!type) {
+  //    switch (type) {
+  //      case 'program':
+  //        this.selectedFilters.TST_PGM_CDE = data;
+  //        break;
 
-        case 'source':
-          this.selectedFilters.SRC_SYS_ID = data;
-          break;
+  //      case 'source':
+  //        this.selectedFilters.SRC_SYS_ID = data;
+  //        break;
 
-        case 'target':
-          this.selectedFilters.TRGT_SYS_ID = data;
-          break;
+  //      case 'target':
+  //        this.selectedFilters.TRGT_SYS_ID = data;
+  //        break;
 
-        case 'filename':
-          this.selectedFilters.FLE_NAM = data;
-          break;
+  //      case 'filename':
+  //        this.selectedFilters.FLE_NAM = data;
+  //        break;
 
-        case 'datatypename':
-          this.selectedFilters.DTA_TYP_NAM = data;
-          break;
-      }
-    }
-  }
+  //      case 'datatypename':
+  //        this.selectedFilters.DTA_TYP_NAM = data;
+  //        break;
+  //    }
+  //  }
+  //}
 
   createNew() {
     const initialState = {
@@ -80,7 +84,7 @@ export class HomeComponent {
       }
     };
     let config: ModalOptions = {
-      class: 'modal-lg modal-dialog-centered',
+      class: 'modal-lg',
       ignoreBackdropClick: true,
       initialState
     }
@@ -139,11 +143,11 @@ export class HomeComponent {
   onSearch() {
     if (!!this.pemsRecords && !!this.pemsRecords.length) {
       this.filteredRecords = [...this.pemsRecords].filter(item =>
-        (!!this.selectedFilters.TST_PGM_CDE && this.selectedFilters.TST_PGM_CDE.length ? this.selectedFilters.TST_PGM_CDE.includes(item.TST_PGM_CDE) : true)
-        && (!!this.selectedFilters.SRC_SYS_ID && this.selectedFilters.SRC_SYS_ID.length ? this.selectedFilters.SRC_SYS_ID.includes(item.SRC_SYS_ID) : true)
-        && (!!this.selectedFilters.TRGT_SYS_ID && this.selectedFilters.TRGT_SYS_ID.length ? this.selectedFilters.TRGT_SYS_ID.includes(item.TRGT_SYS_ID) : true)
-        && (!!this.selectedFilters.FLE_NAM && this.selectedFilters.FLE_NAM.length ? this.selectedFilters.FLE_NAM.includes(item.FLE_NAM) : true)
-        && (!!this.selectedFilters.DTA_TYP_NAM && this.selectedFilters.DTA_TYP_NAM.length ? this.selectedFilters.DTA_TYP_NAM.includes(item.DTA_TYP_NAM) : true)
+        (!!this.selectedFilters.TST_PGM_CDE && this.selectedFilters.TST_PGM_CDE.length ? this.selectedFilters.TST_PGM_CDE.map(_ => _.id).includes(item.TST_PGM_CDE) : true)
+        && (!!this.selectedFilters.SRC_SYS_ID && this.selectedFilters.SRC_SYS_ID.length ? this.selectedFilters.SRC_SYS_ID.map(_ => _.id).includes(item.SRC_SYS_ID) : true)
+        && (!!this.selectedFilters.TRGT_SYS_ID && this.selectedFilters.TRGT_SYS_ID.length ? this.selectedFilters.TRGT_SYS_ID.map(_ => _.id).includes(item.TRGT_SYS_ID) : true)
+        && (!!this.selectedFilters.FLE_NAM && this.selectedFilters.FLE_NAM.length ? this.selectedFilters.FLE_NAM.map(_ => _.id).includes(item.FLE_NAM) : true)
+        && (!!this.selectedFilters.DTA_TYP_NAM && this.selectedFilters.DTA_TYP_NAM.length ? this.selectedFilters.DTA_TYP_NAM.map(_ => _.id).includes(item.DTA_TYP_NAM) : true)
       );
     } else {
       this.filteredRecords = JSON.parse(JSON.stringify(this.pemsRecords));
@@ -202,9 +206,9 @@ export interface PEMS {
 }
 
 interface ISelectedFilters {
-  TST_PGM_CDE: Array<string>;
-  SRC_SYS_ID: Array<string>;
-  TRGT_SYS_ID: Array<string>;
-  FLE_NAM: Array<string>;
-  DTA_TYP_NAM: Array<string>;
+  TST_PGM_CDE: Array<IDropdown>;
+  SRC_SYS_ID: Array<IDropdown>;
+  TRGT_SYS_ID: Array<IDropdown>;
+  FLE_NAM: Array<IDropdown>;
+  DTA_TYP_NAM: Array<IDropdown>;
 }
